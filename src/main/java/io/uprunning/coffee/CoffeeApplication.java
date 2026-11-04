@@ -2,7 +2,12 @@ package io.uprunning.coffee;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -12,29 +17,4 @@ public class CoffeeApplication {
 		SpringApplication.run(CoffeeApplication.class, args);
 	}
 
-}
-
-class Coffee{
-	private final String id;
-	private String name;
-
-	public Coffee(String id,String name) { //constructor
-		this.id=id;
-		this.name=name;
-	}
-	public Coffee(String name ) {  //constructor with one argument, name, automatically id generated
-		this(UUID.randomUUID().toString(),name);
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name=name;
-	}
 }
